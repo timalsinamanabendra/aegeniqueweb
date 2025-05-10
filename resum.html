@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AEGENIQUE</title>
+  <link rel="shortcut icon" type="social-icons" href="logo.png">
+  <link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="resum-body">
+
+<header class="top-header">
+  <div class="top-bar">
+    <div class="logo">
+      <img src="logo.png" alt="AEGENIQUE logo">
+      <span><strong>AEGENIQUE</strong><br><small>OVERSEAS CONSULTING SERVICES LLP</small></span>
+    </div>
+    <div class="contact-info">
+      <div class="email">
+        <strong>Email</strong><br>
+        <i class="fa-solid fa-envelope" style="font-size:20px;color:#ff4d00;margin-right: 4px;"></i><a href="mailto:aegeniqueoverseas@gmail.com">aegeniqueoverseas@gmail.com</a>
+      </div>
+      <div class="phone">
+        <strong>Call</strong><br>
+        <i class="fa-solid fa-phone" style="font-size:20px;color:#ff4d00;margin-right: 4px;"></i><span>Call Us:+91 7977760172</span>
+      </div>
+    </div>
+    <div class="resume-button">
+      <a href="resum.html" class="btn-orange">Submit Resume</a>
+    </div>
+  </div>
+
+ <nav class="navbar">
+  <ul class="nav-menu">
+    <li><a href="Home.html">HOME</a></li>
+    <li><a href="aboutus.html">ABOUT US</a></li>
+    <li><a href="services.html">OUR SERVICES</a></li>
+    <li><a href="resum.html">SUBMIT RESUME</a></li>
+    <li><a href="Requirement.html">SUBMIT REQUIREMENT</a></li>
+  </ul>
+</nav>
+</header>
+
+
+<div class="form-container-resum">
+    <h2>Submit Resume</h2>
+    <form id="job-application-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="mobile" placeholder="Mobile Number" required>
+      <input type="text" name="position" placeholder="Position Applied">
+      <input type="text" name="experience" placeholder="Total Experience" required>
+      <input type="text" name="city" placeholder="Your City">
+      <input type="text" name="state" placeholder="Your State">
+      <input type="text" name="pincode" placeholder="Pincode">
+      <input type="text" name="location" placeholder="Preferred job location">
+      <textarea name="message" placeholder="Message" rows="5"></textarea>
+      <button type="submit" class="submit-button-resum">Send Message</button>
+    </form>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+<div class="footer-col">
+  <h4>Have a Questions?</h4>
+  <div class="footer-item">
+    <i class="fa-solid fa-location-dot"></i>
+    <span>E503 River retreat Casa Rio, Palava City, Dombivali East 421204</span>
+  </div>
+  <div class="footer-item">
+    <i class="fa-solid fa-phone"></i>
+    <span>+91 7977760172</span>
+  </div>
+  <div class="footer-item">
+    <i class="fa-solid fa-envelope"></i>
+    <span>aegeniqueoverseas@gmail.com</span>
+  </div>
+</div>
+    <div class="footer-col">
+      <h4>Job Categories</h4>
+      <ul>
+        <li>Manufacture</li>
+        <li>Hospitality</li>
+        <li>Medical</li>
+        <li>Landscaping</li>
+        <li>Construction</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+      <li><a href="Home.html" style="color: #fff;">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      </ul>
+    </div>
+<!--     <div class="footer-col">
+      <h4>Subscribe Us!</h4>
+      <input type="email" placeholder="Enter email address" />
+      <button>Subscribe</button>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f" style="color: #fff; font-size: 20px; margin-right: 20px; margin-top: 20px;"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"style=" color: #fff; font-size: 20px; margin-right: 20px; margin-top: 20px;"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"style="color: #fff; font-size: 20px; margin-right: 20px; margin-top: 20px;"></i></a>
+      </div>
+    </div> -->
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 AEGENIQUE OVERSEAS CONSULTING. All rights reserved. Created by Manabendra Timalsina.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("RFdlwSFGHs0F3nDm7"); // Replace with your EmailJS public key
+  })();
+
+  // Handle form submission
+  document.getElementById("job-application-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_k8bs1be", "template_pey1c6i", this)
+      .then(function(response) {
+        alert("Message sent successfully!");
+      }, function(error) {
+        alert("Failed to send message. Please try again.");
+        console.error("EmailJS error:", error);
+      });
+  });
+</script>
+</body>
+
+</html>
